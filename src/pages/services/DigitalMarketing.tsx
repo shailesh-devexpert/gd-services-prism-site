@@ -1,5 +1,5 @@
-import React from 'react';
-import { TrendingUp, Target, Users, BarChart3, Search, MessageSquare, ArrowRight, CheckCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { TrendingUp, Target, Users, BarChart3, Search, MessageSquare, ArrowRight, CheckCircle, Send, Megaphone, Mail, Share2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const DigitalMarketing = () => {

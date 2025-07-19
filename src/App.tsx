@@ -10,6 +10,9 @@ import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 import WebDevelopment from "./pages/services/WebDevelopment";
 import DigitalMarketing from "./pages/services/DigitalMarketing";
+import SEO from "./pages/services/SEO";
+import SoftwareDevelopment from "./pages/services/SoftwareDevelopment";
+import CyberSecurity from "./pages/services/CyberSecurity";
 import Terms from "./pages/legal/Terms";
 import Refund from "./pages/legal/Refund";
 import Shipping from "./pages/legal/Shipping";
@@ -31,6 +34,9 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/services/web-development" element={<WebDevelopment />} />
             <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
+            <Route path="/services/seo" element={<SEO />} />
+            <Route path="/services/software" element={<SoftwareDevelopment />} />
+            <Route path="/services/cybersecurity" element={<CyberSecurity />} />
             <Route path="/legal/terms" element={<Terms />} />
             <Route path="/legal/refund" element={<Refund />} />
             <Route path="/legal/shipping" element={<Shipping />} />

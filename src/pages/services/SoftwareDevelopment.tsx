@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { Code, Smartphone, Zap, Shield, Users, ArrowRight, CheckCircle, Database, Globe, Palette, Settings, Monitor, Cloud, Send } from 'lucide-react';
+import { Smartphone, Code, Database, Zap, Shield, Users, ArrowRight, CheckCircle, Monitor, Globe, Settings, Cloud, Send, Cpu, Layers, GitBranch } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const WebDevelopment = () => {
+const SoftwareDevelopment = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     projectType: '',
+    platform: '',
     budget: '',
     timeline: '',
     message: ''
@@ -16,113 +17,105 @@ const WebDevelopment = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    setFormData({ name: '', email: '', phone: '', projectType: '', budget: '', timeline: '', message: '' });
+    setFormData({ name: '', email: '', phone: '', projectType: '', platform: '', budget: '', timeline: '', message: '' });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const features = [
-    {
-      icon: Code,
-      title: 'Custom Development',
-      description: 'Tailored solutions built with the latest technologies and best practices'
-    },
+  const services = [
     {
       icon: Smartphone,
-      title: 'Responsive Design',
-      description: 'Websites that look perfect on all devices and screen sizes'
+      title: 'Mobile App Development',
+      description: 'Native and cross-platform mobile applications for iOS and Android'
     },
     {
-      icon: Zap,
-      title: 'Fast Performance',
-      description: 'Optimized for speed and performance with modern frameworks'
+      icon: Monitor,
+      title: 'Desktop Applications',
+      description: 'Custom desktop software solutions for Windows, macOS, and Linux'
     },
     {
-      icon: Shield,
-      title: 'Secure & Reliable',
-      description: 'Built with security best practices and robust architecture'
+      icon: Cloud,
+      title: 'Cloud Applications',
+      description: 'Scalable cloud-based software solutions and SaaS platforms'
     },
     {
       icon: Database,
-      title: 'Database Integration',
-      description: 'Seamless integration with various database systems'
+      title: 'Enterprise Software',
+      description: 'Large-scale enterprise applications and business management systems'
     },
     {
-      icon: Globe,
-      title: 'SEO Optimized',
-      description: 'Built-in SEO optimization for better search rankings'
+      icon: Cpu,
+      title: 'AI & Machine Learning',
+      description: 'Intelligent software solutions powered by AI and ML algorithms'
     },
     {
-      icon: Palette,
-      title: 'UI/UX Design',
-      description: 'Beautiful and intuitive user interfaces'
-    },
-    {
-      icon: Settings,
-      title: 'Easy Maintenance',
-      description: 'Clean code structure for easy updates and maintenance'
+      icon: Shield,
+      title: 'Cybersecurity Software',
+      description: 'Security-focused applications and cybersecurity tools'
     }
   ];
 
-  const frontendTech = [
-    { name: 'React', category: 'Frontend', description: 'Component-based UI library' },
-    { name: 'Next.js', category: 'Frontend', description: 'React production framework' },
-    { name: 'Vue.js', category: 'Frontend', description: 'Progressive JavaScript framework' },
-    { name: 'Angular', category: 'Frontend', description: 'Platform for mobile and desktop' },
-    { name: 'TypeScript', category: 'Frontend', description: 'Typed JavaScript superset' },
-    { name: 'Tailwind CSS', category: 'Frontend', description: 'Utility-first CSS framework' }
+  const mobileTech = [
+    { name: 'React Native', description: 'Cross-platform mobile development' },
+    { name: 'Flutter', description: 'Google\'s UI toolkit for mobile' },
+    { name: 'Swift', description: 'Native iOS development' },
+    { name: 'Kotlin', description: 'Modern Android development' },
+    { name: 'Xamarin', description: 'Microsoft mobile platform' },
+    { name: 'Ionic', description: 'Hybrid mobile app framework' }
   ];
 
   const backendTech = [
-    { name: 'Node.js', category: 'Backend', description: 'JavaScript runtime environment' },
-    { name: 'Python', category: 'Backend', description: 'High-level programming language' },
-    { name: 'PHP', category: 'Backend', description: 'Server-side scripting language' },
-    { name: 'Express.js', category: 'Backend', description: 'Fast Node.js web framework' },
-    { name: 'Django', category: 'Backend', description: 'Python web framework' },
-    { name: 'Laravel', category: 'Backend', description: 'PHP web application framework' }
+    { name: 'Node.js', description: 'JavaScript runtime for servers' },
+    { name: 'Python', description: 'Versatile programming language' },
+    { name: 'Java', description: 'Enterprise-grade development' },
+    { name: 'C#/.NET', description: 'Microsoft development platform' },
+    { name: 'Go', description: 'Fast and efficient backend language' },
+    { name: 'Rust', description: 'Systems programming language' }
   ];
 
   const databaseTech = [
-    { name: 'PostgreSQL', category: 'Database', description: 'Advanced open-source database' },
-    { name: 'MySQL', category: 'Database', description: 'Popular relational database' },
-    { name: 'MongoDB', category: 'Database', description: 'NoSQL document database' },
-    { name: 'Redis', category: 'Database', description: 'In-memory data structure store' }
+    { name: 'PostgreSQL', description: 'Advanced relational database' },
+    { name: 'MongoDB', description: 'Document-oriented database' },
+    { name: 'Redis', description: 'In-memory data store' },
+    { name: 'Elasticsearch', description: 'Search and analytics engine' },
+    { name: 'Cassandra', description: 'Distributed NoSQL database' },
+    { name: 'InfluxDB', description: 'Time series database' }
   ];
 
   const cloudTech = [
-    { name: 'AWS', category: 'Cloud', description: 'Amazon Web Services' },
-    { name: 'Google Cloud', category: 'Cloud', description: 'Google Cloud Platform' },
-    { name: 'Vercel', category: 'Cloud', description: 'Frontend deployment platform' },
-    { name: 'Docker', category: 'Cloud', description: 'Containerization platform' }
+    { name: 'AWS', description: 'Amazon Web Services' },
+    { name: 'Microsoft Azure', description: 'Microsoft cloud platform' },
+    { name: 'Google Cloud', description: 'Google cloud services' },
+    { name: 'Kubernetes', description: 'Container orchestration' },
+    { name: 'Docker', description: 'Containerization platform' },
+    { name: 'Terraform', description: 'Infrastructure as code' }
   ];
-
-  const allTechnologies = [...frontendTech, ...backendTech, ...databaseTech, ...cloudTech];
 
   const process = [
     {
       step: '01',
-      title: 'Discovery & Planning',
-      description: 'Understanding your requirements and creating a detailed project roadmap',
+      title: 'Requirements Analysis',
+      description: 'Detailed analysis of your software requirements and business goals',
       icon: Users
     },
     {
       step: '02',
-      title: 'Design & Prototyping',
-      description: 'Creating wireframes and interactive prototypes for approval',
-      icon: Palette
+      title: 'Architecture Design',
+      description: 'System architecture and technical specification design',
+      icon: Layers
     },
     {
       step: '03',
       title: 'Development & Testing',
-      description: 'Building your application with rigorous testing at every stage',
+      description: 'Agile development with continuous testing and quality assurance',
       icon: Code
     },
     {
       step: '04',
       title: 'Deployment & Support',
-      description: 'Launching your project and providing ongoing maintenance',
+      description: 'Production deployment and ongoing maintenance support',
       icon: Cloud
     }
   ];
@@ -135,10 +128,10 @@ const WebDevelopment = () => {
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
           <div className="max-w-4xl mx-auto animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Web Development Services
+              Software Development
             </h1>
             <p className="text-xl md:text-2xl leading-relaxed mb-8">
-              Custom web applications and websites built with cutting-edge technologies
+              Custom software solutions that drive innovation and business growth
             </p>
             <Link
               to="/contact"
@@ -151,26 +144,26 @@ const WebDevelopment = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Services Grid */}
       <section className="py-20 bg-surface">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Why Choose Our Web Development?
+              Software Development Services
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We deliver exceptional web solutions that drive business growth and user engagement
+              From mobile apps to enterprise software, we build solutions that scale
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <div key={index} className="glass-card text-center hover-lift animate-scale-in">
-                <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <feature.icon size={32} className="text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div key={index} className="glass-card hover-lift animate-scale-in">
+                <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-6">
+                  <service.icon size={32} className="text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                <h3 className="text-xl font-semibold mb-4 text-foreground">{service.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{service.description}</p>
               </div>
             ))}
           </div>
@@ -182,21 +175,21 @@ const WebDevelopment = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Technologies We Master
+              Technologies We Excel In
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Leveraging the latest technologies to build robust and scalable solutions
+              Cutting-edge technologies for robust and scalable software solutions
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="glass-card">
               <h3 className="text-xl font-bold text-foreground mb-4 flex items-center">
-                <Monitor className="w-6 h-6 mr-2 text-primary" />
-                Frontend
+                <Smartphone className="w-6 h-6 mr-2 text-primary" />
+                Mobile Development
               </h3>
               <div className="space-y-3">
-                {frontendTech.map((tech, index) => (
+                {mobileTech.map((tech, index) => (
                   <div key={index} className="border-l-2 border-primary/30 pl-3">
                     <h4 className="font-semibold text-foreground">{tech.name}</h4>
                     <p className="text-sm text-muted-foreground">{tech.description}</p>
@@ -208,7 +201,7 @@ const WebDevelopment = () => {
             <div className="glass-card">
               <h3 className="text-xl font-bold text-foreground mb-4 flex items-center">
                 <Settings className="w-6 h-6 mr-2 text-secondary" />
-                Backend
+                Backend Technologies
               </h3>
               <div className="space-y-3">
                 {backendTech.map((tech, index) => (
@@ -223,7 +216,7 @@ const WebDevelopment = () => {
             <div className="glass-card">
               <h3 className="text-xl font-bold text-foreground mb-4 flex items-center">
                 <Database className="w-6 h-6 mr-2 text-accent" />
-                Database
+                Databases
               </h3>
               <div className="space-y-3">
                 {databaseTech.map((tech, index) => (
@@ -253,7 +246,7 @@ const WebDevelopment = () => {
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Development Process */}
       <section className="py-20 bg-surface">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
@@ -261,7 +254,7 @@ const WebDevelopment = () => {
               Our Development Process
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              A structured approach ensuring quality delivery and client satisfaction
+              Agile methodology ensuring quality delivery and client collaboration
             </p>
           </div>
 
@@ -287,24 +280,24 @@ const WebDevelopment = () => {
             {/* Services List */}
             <div className="animate-fade-in">
               <h2 className="text-4xl font-bold text-foreground mb-6">
-                Comprehensive Web Solutions
+                Complete Software Solutions
               </h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                From simple websites to complex web applications, we provide end-to-end development services.
+                End-to-end software development services for businesses of all sizes.
               </p>
 
               <div className="space-y-4">
                 {[
-                  'Custom Website Development',
-                  'E-commerce Platforms',
-                  'Progressive Web Apps (PWA)',
-                  'Content Management Systems',
+                  'Custom Mobile App Development',
+                  'Enterprise Software Solutions',
+                  'Desktop Application Development',
+                  'Cloud-Based Software Platforms',
                   'API Development & Integration',
-                  'Website Maintenance & Support',
+                  'Legacy System Modernization',
+                  'Software Testing & QA',
+                  'DevOps & CI/CD Implementation',
                   'Performance Optimization',
-                  'Security Implementation',
-                  'Mobile-First Design',
-                  'SEO-Friendly Architecture'
+                  'Ongoing Support & Maintenance'
                 ].map((service, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <CheckCircle size={20} className="text-primary flex-shrink-0" />
@@ -318,7 +311,7 @@ const WebDevelopment = () => {
             <div className="glass-card animate-scale-in">
               <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center">
                 <Send className="w-6 h-6 mr-2 text-primary" />
-                Quick Enquiry
+                Project Enquiry
               </h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
@@ -361,12 +354,28 @@ const WebDevelopment = () => {
                     className="w-full px-4 py-3 bg-white/50 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 backdrop-blur-sm"
                   >
                     <option value="">Select Project Type</option>
-                    <option value="website">Business Website</option>
-                    <option value="ecommerce">E-commerce Store</option>
-                    <option value="webapp">Web Application</option>
-                    <option value="cms">CMS Development</option>
+                    <option value="mobile">Mobile App</option>
+                    <option value="web">Web Application</option>
+                    <option value="desktop">Desktop Software</option>
+                    <option value="enterprise">Enterprise Solution</option>
                     <option value="api">API Development</option>
-                    <option value="maintenance">Website Maintenance</option>
+                    <option value="modernization">System Modernization</option>
+                  </select>
+                </div>
+                <div>
+                  <select
+                    name="platform"
+                    value={formData.platform}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-white/50 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 backdrop-blur-sm"
+                  >
+                    <option value="">Target Platform</option>
+                    <option value="ios">iOS</option>
+                    <option value="android">Android</option>
+                    <option value="cross-platform">Cross-Platform</option>
+                    <option value="web">Web</option>
+                    <option value="desktop">Desktop</option>
+                    <option value="cloud">Cloud</option>
                   </select>
                 </div>
                 <div>
@@ -376,25 +385,11 @@ const WebDevelopment = () => {
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-white/50 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 backdrop-blur-sm"
                   >
-                    <option value="">Select Budget Range</option>
-                    <option value="5k-10k">$5,000 - $10,000</option>
+                    <option value="">Budget Range</option>
                     <option value="10k-25k">$10,000 - $25,000</option>
                     <option value="25k-50k">$25,000 - $50,000</option>
-                    <option value="50k+">$50,000+</option>
-                  </select>
-                </div>
-                <div>
-                  <select
-                    name="timeline"
-                    value={formData.timeline}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/50 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 backdrop-blur-sm"
-                  >
-                    <option value="">Preferred Timeline</option>
-                    <option value="asap">ASAP</option>
-                    <option value="1-3months">1-3 Months</option>
-                    <option value="3-6months">3-6 Months</option>
-                    <option value="6months+">6+ Months</option>
+                    <option value="50k-100k">$50,000 - $100,000</option>
+                    <option value="100k+">$100,000+</option>
                   </select>
                 </div>
                 <div>
@@ -424,4 +419,4 @@ const WebDevelopment = () => {
   );
 };
 
-export default WebDevelopment;
+export default SoftwareDevelopment;
