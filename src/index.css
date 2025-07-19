@@ -2,41 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* GD Services Design System - Material Design with Glass Effects */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Light Theme Colors */
+    --background: 0 0% 98%;
+    --foreground: 220 15% 15%;
 
+    /* Glass Effect Base */
+    --glass-background: 255 255 255 / 0.1;
+    --glass-border: 255 255 255 / 0.2;
+    --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+
+    /* Brand Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(330 80% 70%), hsl(280 70% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(280 70% 65%), hsl(0 75% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(320 85% 75%), hsl(290 75% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(330 80% 70%) 0%, hsl(280 70% 65%) 50%, hsl(0 75% 60%) 100%);
+
+    /* Material Design Colors */
+    --primary: 280 70% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 290 75% 80%;
+    --primary-dark: 270 65% 50%;
+
+    --secondary: 330 80% 70%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 340 85% 85%;
+
+    --accent: 0 75% 60%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 10 80% 75%;
+
+    --surface: 0 0% 100%;
+    --surface-foreground: 220 15% 15%;
+    --surface-variant: 220 10% 96%;
+
+    /* Semantic Colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 15% 15%;
+    --border: 220 10% 90%;
+    --input: 220 10% 96%;
+    --ring: 280 70% 65%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Material Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --shadow-md: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    --shadow-xl: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --radius: 16px;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +116,115 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Glass Effect Components */
+  .glass {
+    @apply backdrop-blur-lg bg-white/10 border border-white/20;
+    box-shadow: var(--glass-shadow);
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl p-6;
+  }
+
+  .glass-button {
+    @apply glass rounded-xl px-6 py-3 font-medium transition-all duration-300 hover:bg-white/20 hover:scale-105;
+  }
+
+  /* Gradient Backgrounds */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  /* Material Shadows */
+  .shadow-material-sm {
+    box-shadow: var(--shadow-sm);
+  }
+
+  .shadow-material-md {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-material-lg {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-material-xl {
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out;
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    @apply transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-material-lg;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300;
+  }
+
+  .hover-glow:hover {
+    filter: drop-shadow(0 0 20px hsl(var(--primary) / 0.5));
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
