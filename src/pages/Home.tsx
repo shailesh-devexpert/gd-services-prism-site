@@ -96,14 +96,14 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="glass-button bg-gradient-primary text-white text-lg px-8 py-4 hover:scale-105 transition-all duration-300 inline-flex items-center justify-center space-x-2"
+                className="modern-button bg-gradient-primary text-white text-lg px-8 py-4 hover:scale-105 transition-all duration-300 inline-flex items-center justify-center space-x-2"
               >
                 <span>Get Started</span>
                 <ArrowRight size={20} />
               </Link>
               <Link
                 to="/portfolio"
-                className="glass-button text-white border border-white/30 text-lg px-8 py-4 hover:bg-white/20 transition-all duration-300"
+                className="modern-button text-white border border-white/30 text-lg px-8 py-4 hover:bg-white/20 transition-all duration-300"
               >
                 View Portfolio
               </Link>
@@ -150,7 +150,7 @@ const Home = () => {
               <Link
                 key={index}
                 to={service.link}
-                className="glass-card hover-lift hover-glow group cursor-pointer"
+                className="service-card hover-lift hover-glow group cursor-pointer"
               >
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -218,7 +218,7 @@ const Home = () => {
                 description: 'Scalable solutions that grow with your business'
               }
             ].map((feature, index) => (
-              <div key={index} className="glass-card text-center hover-lift animate-slide-up">
+              <div key={index} className="modern-card text-center hover-lift animate-slide-up">
                 <div className="w-12 h-12 bg-gradient-accent rounded-xl flex items-center justify-center mx-auto mb-4">
                   <feature.icon size={24} className="text-white" />
                 </div>
@@ -244,7 +244,7 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="glass-card hover-lift animate-scale-in">
+              <div key={index} className="modern-card hover-lift animate-scale-in">
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} size={16} className="text-yellow-400 fill-current" />
@@ -277,14 +277,14 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="glass-button bg-white/20 text-white text-lg px-8 py-4 hover:bg-white/30 transition-all duration-300 inline-flex items-center justify-center space-x-2"
+                className="modern-button bg-white/20 text-white text-lg px-8 py-4 hover:bg-white/30 transition-all duration-300 inline-flex items-center justify-center space-x-2"
               >
                 <span>Start Your Project</span>
                 <ArrowRight size={20} />
               </Link>
               <Link
                 to="/portfolio"
-                className="glass-button border border-white/30 text-white text-lg px-8 py-4 hover:bg-white/10 transition-all duration-300"
+                className="modern-button border border-white/30 text-white text-lg px-8 py-4 hover:bg-white/10 transition-all duration-300"
               >
                 View Our Work
               </Link>

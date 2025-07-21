@@ -48,7 +48,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="animate-fade-in">
-              <div className="glass-card">
+              <div className="modern-card">
                 <h2 className="text-3xl font-bold text-foreground mb-6">Send us a Message</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -140,7 +140,7 @@ const Contact = () => {
 
                   <button
                     type="submit"
-                    className="w-full glass-button bg-gradient-primary text-white py-4 hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
+                    className="w-full modern-button bg-gradient-primary text-white py-4 hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
                   >
                     <Send size={20} />
                     <span>Send Message</span>
@@ -152,7 +152,7 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="animate-fade-in">
               <div className="space-y-8">
-                <div className="glass-card">
+                <div className="modern-card">
                   <h2 className="text-3xl font-bold text-foreground mb-6">Contact Information</h2>
                   
                   <div className="space-y-6">
@@ -203,17 +203,17 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="glass-card">
+                <div className="modern-card">
                   <h3 className="text-xl font-semibold text-foreground mb-4">Quick Response</h3>
                   <p className="text-muted-foreground mb-4">
                     Need immediate assistance? Use our live chat or call us directly.
                   </p>
                   <div className="flex space-x-4">
-                    <button className="glass-button bg-gradient-primary text-white flex items-center space-x-2 hover:scale-105 transition-all duration-300">
+                    <button className="modern-button bg-gradient-primary text-white flex items-center space-x-2 hover:scale-105 transition-all duration-300">
                       <MessageCircle size={18} />
                       <span>Live Chat</span>
                     </button>
-                    <button className="glass-button text-foreground border border-primary hover:bg-primary/10 flex items-center space-x-2 hover:scale-105 transition-all duration-300">
+                    <button className="modern-button text-foreground border border-primary hover:bg-primary/10 flex items-center space-x-2 hover:scale-105 transition-all duration-300">
                       <Phone size={18} />
                       <span>Call Now</span>
                     </button>
@@ -235,13 +235,13 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="glass-card overflow-hidden animate-scale-in">
+          <div className="modern-card overflow-hidden animate-scale-in">
             <div className="w-full h-96 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
               <div className="text-center">
                 <MapPin size={48} className="text-primary mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-foreground mb-2">Interactive Map</h3>
                 <p className="text-muted-foreground">123 Business Avenue, Tech City, TC 12345</p>
-                <button className="mt-4 glass-button bg-gradient-primary text-white hover:scale-105 transition-all duration-300">
+                <button className="mt-4 modern-button bg-gradient-primary text-white hover:scale-105 transition-all duration-300">
                   Get Directions
                 </button>
               </div>

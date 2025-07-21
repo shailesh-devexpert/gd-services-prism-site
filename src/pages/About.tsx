@@ -86,7 +86,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
-              <div className="glass-card">
+              <div className="modern-card">
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mr-4">
                     <Target size={24} className="text-white" />
@@ -102,7 +102,7 @@ const About = () => {
             </div>
 
             <div className="animate-fade-in">
-              <div className="glass-card">
+              <div className="modern-card">
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 bg-gradient-secondary rounded-xl flex items-center justify-center mr-4">
                     <Eye size={24} className="text-white" />
@@ -135,7 +135,7 @@ const About = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="glass-card text-center hover-lift animate-slide-up">
+            <div className="modern-card text-center hover-lift animate-slide-up">
               <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Zap size={32} className="text-white" />
               </div>
@@ -145,7 +145,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="glass-card text-center hover-lift animate-slide-up">
+            <div className="modern-card text-center hover-lift animate-slide-up">
               <div className="w-16 h-16 bg-gradient-secondary rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Users size={32} className="text-white" />
               </div>
@@ -155,7 +155,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="glass-card text-center hover-lift animate-slide-up">
+            <div className="modern-card text-center hover-lift animate-slide-up">
               <div className="w-16 h-16 bg-gradient-accent rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Award size={32} className="text-white" />
               </div>
@@ -182,7 +182,7 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="glass-card text-center hover-lift animate-scale-in">
+              <div key={index} className="modern-card text-center hover-lift animate-scale-in">
                 <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <value.icon size={32} className="text-white" />
                 </div>
@@ -208,7 +208,7 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
-              <div key={index} className="glass-card text-center hover-lift animate-scale-in">
+              <div key={index} className="modern-card text-center hover-lift animate-scale-in">
                 <div className="relative w-32 h-32 mx-auto mb-6">
                   <img
                     src={member.image}

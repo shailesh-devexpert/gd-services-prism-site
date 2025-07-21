@@ -102,7 +102,7 @@ const Portfolio = () => {
               <button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
-                className={`glass-button transition-all duration-300 ${
+                className={`modern-button transition-all duration-300 ${
                   activeFilter === filter.id
                     ? 'bg-gradient-primary text-white scale-105'
                     : 'text-foreground hover:bg-white/20'
@@ -124,7 +124,7 @@ const Portfolio = () => {
             {filteredProjects.map((project, index) => (
               <div
                 key={project.id}
-                className="glass-card hover-lift group animate-scale-in"
+                className="modern-card hover-lift group animate-scale-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative overflow-hidden rounded-xl mb-6">
@@ -177,7 +177,7 @@ const Portfolio = () => {
           {/* Load More Button */}
           {filteredProjects.length > 12 && (
             <div className="text-center mt-12">
-              <button className="glass-button bg-gradient-primary text-white px-8 py-3 hover:scale-105 transition-all duration-300">
+              <button className="modern-button bg-gradient-primary text-white px-8 py-3 hover:scale-105 transition-all duration-300">
                 Load More Projects
               </button>
             </div>
@@ -197,7 +197,7 @@ const Portfolio = () => {
             </p>
             <a
               href="/contact"
-              className="glass-button bg-gradient-primary text-white text-lg px-8 py-4 hover:scale-105 transition-all duration-300 inline-flex items-center space-x-2"
+              className="modern-button bg-gradient-primary text-white text-lg px-8 py-4 hover:scale-105 transition-all duration-300 inline-flex items-center space-x-2"
             >
               <span>Get Started Today</span>
               <ExternalLink size={20} />

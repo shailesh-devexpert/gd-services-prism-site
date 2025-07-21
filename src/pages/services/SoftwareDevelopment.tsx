@@ -135,7 +135,7 @@ const SoftwareDevelopment = () => {
             </p>
             <Link
               to="/contact"
-              className="glass-button bg-white/20 text-white text-lg px-8 py-4 hover:bg-white/30 transition-all duration-300 inline-flex items-center space-x-2"
+              className="modern-button bg-white/20 text-white text-lg px-8 py-4 hover:bg-white/30 transition-all duration-300 inline-flex items-center space-x-2"
             >
               <span>Start Your Project</span>
               <ArrowRight size={20} />
@@ -158,7 +158,7 @@ const SoftwareDevelopment = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="glass-card hover-lift animate-scale-in">
+              <div key={index} className="service-card hover-lift animate-scale-in">
                 <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-6">
                   <service.icon size={32} className="text-white" />
                 </div>
@@ -183,7 +183,7 @@ const SoftwareDevelopment = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="glass-card">
+            <div className="modern-card">
               <h3 className="text-xl font-bold text-foreground mb-4 flex items-center">
                 <Smartphone className="w-6 h-6 mr-2 text-primary" />
                 Mobile Development
@@ -260,7 +260,7 @@ const SoftwareDevelopment = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {process.map((item, index) => (
-              <div key={index} className="glass-card text-center hover-lift animate-slide-up">
+              <div key={index} className="modern-card text-center hover-lift animate-slide-up">
                 <div className="w-16 h-16 bg-gradient-secondary rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <item.icon size={32} className="text-white" />
                 </div>
@@ -308,7 +308,7 @@ const SoftwareDevelopment = () => {
             </div>
 
             {/* Quick Enquiry Form */}
-            <div className="glass-card animate-scale-in">
+            <div className="modern-card animate-scale-in">
               <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center">
                 <Send className="w-6 h-6 mr-2 text-primary" />
                 Project Enquiry
@@ -405,7 +405,7 @@ const SoftwareDevelopment = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full glass-button bg-gradient-primary text-white py-3 hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
+                  className="w-full modern-button bg-gradient-primary text-white py-3 hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
                 >
                   <Send size={20} />
                   <span>Send Enquiry</span>

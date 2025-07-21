@@ -99,7 +99,7 @@ const Header = () => {
                 </button>
                 
                 {isServicesOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-64 glass-card animate-fade-in">
+                  <div className="absolute top-full left-0 mt-2 w-64 modern-card animate-fade-in">
                     <div className="py-2">
                       {services.map((service) => (
                         <Link
@@ -137,7 +137,7 @@ const Header = () => {
             <div className="hidden md:block">
               <Link
                 to="/contact"
-                className="glass-button bg-gradient-primary text-white hover:scale-105 transition-all duration-300"
+                className="modern-button bg-gradient-primary text-white hover:scale-105 transition-all duration-300"
               >
                 Get Quote
               </Link>
@@ -154,7 +154,7 @@ const Header = () => {
 
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
-            <div className="md:hidden glass-card mt-2 animate-slide-up">
+            <div className="md:hidden modern-card mt-2 animate-slide-up">
               <div className="py-4 space-y-2">
                 <Link
                   to="/"
@@ -205,7 +205,7 @@ const Header = () => {
                 <div className="px-4 pt-4">
                   <Link
                     to="/contact"
-                    className="glass-button bg-gradient-primary text-white w-full text-center block"
+                    className="modern-button bg-gradient-primary text-white w-full text-center block"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Get Quote

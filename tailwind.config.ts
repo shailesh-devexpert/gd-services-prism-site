@@ -47,12 +47,10 @@ export default {
 				},
 				card: {
 					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
+					foreground: 'hsl(var(--card-foreground))',
+					elevated: 'hsl(var(--card-elevated))',
+					border: 'hsl(var(--card-border))'
 				},
-				glass: {
-					DEFAULT: 'var(--glass-background)',
-					border: 'var(--glass-border)'
-				}
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
@@ -65,10 +63,7 @@ export default {
 				'material-md': 'var(--shadow-md)',
 				'material-lg': 'var(--shadow-lg)',
 				'material-xl': 'var(--shadow-xl)',
-				'glass': 'var(--glass-shadow)'
-			},
-			backdropBlur: {
-				'glass': '20px'
+				'card': 'var(--card-shadow)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
