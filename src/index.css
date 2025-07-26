@@ -2,38 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-/* GD Services Design System - Material Design with Glass Effects */
+/* GD Services Design System - Modern AI 2025 Theme */
 
 @layer base {
   :root {
-    /* Light Theme Colors */
-    --background: 0 0% 98%;
-    --foreground: 220 15% 15%;
+    /* Light Theme Colors - Clean & Modern */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
 
     /* Modern Card Effects */
     --card-elevated: 0 0% 100%;
-    --card-border: 220 10% 92%;
-    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --card-border: 220 13% 91%;
+    --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
 
-    /* Brand Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(330 80% 70%), hsl(280 70% 65%));
-    --gradient-secondary: linear-gradient(135deg, hsl(280 70% 65%), hsl(0 75% 60%));
-    --gradient-accent: linear-gradient(135deg, hsl(320 85% 75%), hsl(290 75% 70%));
-    --gradient-hero: linear-gradient(135deg, hsl(330 80% 70%) 0%, hsl(280 70% 65%) 50%, hsl(0 75% 60%) 100%);
+    /* Modern AI Gradients - Professional & Sophisticated */
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    --gradient-mesh: radial-gradient(circle at 25% 25%, #667eea 0%, transparent 50%), radial-gradient(circle at 75% 75%, #764ba2 0%, transparent 50%);
 
-    /* Material Design Colors */
-    --primary: 280 70% 65%;
+    /* Modern AI Colors - Professional Palette */
+    --primary: 233 47% 74%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 290 75% 80%;
-    --primary-dark: 270 65% 50%;
+    --primary-light: 233 47% 84%;
+    --primary-dark: 233 47% 64%;
 
-    --secondary: 330 80% 70%;
+    --secondary: 320 85% 75%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-light: 340 85% 85%;
+    --secondary-light: 320 85% 85%;
 
-    --accent: 0 75% 60%;
+    --accent: 200 100% 70%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 10 80% 75%;
+    --accent-light: 200 100% 80%;
 
     --surface: 0 0% 100%;
     --surface-foreground: 220 15% 15%;
@@ -46,11 +47,11 @@
     --input: 220 10% 96%;
     --ring: 280 70% 65%;
 
-    /* Material Shadows */
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    --shadow-md: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    --shadow-xl: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    /* Modern Soft Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.08);
+    --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.1);
 
     --radius: 16px;
 
@@ -116,35 +117,45 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 }
 
 @layer components {
-  /* Modern Card Components */
+  /* Modern AI Card Components */
   .modern-card {
-    @apply bg-white border border-border rounded-2xl p-6 transition-all duration-300;
-    box-shadow: var(--card-shadow);
+    @apply bg-white/80 backdrop-blur-sm border border-white/20 rounded-3xl p-8 transition-all duration-500;
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
   }
 
   .modern-card:hover {
-    @apply -translate-y-1;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    @apply -translate-y-2 scale-[1.02];
+    box-shadow: var(--shadow-xl);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.8));
   }
 
   .modern-button {
-    @apply rounded-xl px-6 py-3 font-medium transition-all duration-300 hover:scale-105 hover:-translate-y-0.5;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    @apply rounded-2xl px-8 py-4 font-semibold transition-all duration-500 transform;
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-md);
+    font-family: 'Space Grotesk', sans-serif;
   }
 
   .modern-button:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    @apply -translate-y-1 scale-105;
+    box-shadow: var(--shadow-lg);
+    filter: brightness(1.1);
   }
 
-  /* Service Card with Gradient Border */
+  /* AI Service Card with Modern Effects */
   .service-card {
-    @apply bg-white rounded-2xl p-8 transition-all duration-300 relative overflow-hidden;
-    box-shadow: var(--card-shadow);
+    @apply bg-white/90 backdrop-blur-md rounded-3xl p-10 transition-all duration-700 relative overflow-hidden;
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
 
   .service-card::before {
@@ -153,13 +164,32 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
+    height: 6px;
     background: var(--gradient-primary);
+    border-radius: 1.5rem 1.5rem 0 0;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: var(--gradient-mesh);
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    z-index: -1;
   }
 
   .service-card:hover {
-    @apply -translate-y-2;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    @apply -translate-y-3 scale-[1.02];
+    box-shadow: var(--shadow-xl);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.8));
+  }
+
+  .service-card:hover::after {
+    opacity: 0.1;
   }
 
   /* Gradient Backgrounds */
@@ -209,17 +239,54 @@
     animation: scaleIn 0.6s ease-out;
   }
 
-  /* Hover Effects */
+  /* Modern Hover Effects */
   .hover-lift {
-    @apply transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-material-lg;
+    @apply transition-all duration-500 hover:transform hover:-translate-y-3 hover:scale-[1.02];
+    box-shadow: var(--shadow-md);
+  }
+
+  .hover-lift:hover {
+    box-shadow: var(--shadow-xl);
   }
 
   .hover-glow {
-    @apply transition-all duration-300;
+    @apply transition-all duration-500;
   }
 
   .hover-glow:hover {
-    filter: drop-shadow(0 0 20px hsl(var(--primary) / 0.5));
+    filter: drop-shadow(0 0 30px rgba(102, 126, 234, 0.4));
+  }
+
+  /* AI-themed text effects */
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-secondary {
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Modern hero section */
+  .hero-bg {
+    background: var(--gradient-mesh);
+    position: relative;
+  }
+
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23667eea' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
   }
 }
 
